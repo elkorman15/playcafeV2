@@ -83,11 +83,11 @@ export function Menu() {
 }
 
 const COURSES = [
-  { t: "Stillgruppe", price: "18 €", c: "var(--peach)", icon: <><circle cx="20" cy="16" r="8" fill="#F3C4BB" /><path d="M8 36c0-8 5-12 12-12s12 4 12 12z" fill="#EC9B86" /><circle cx="26" cy="26" r="5" fill="#FBF6EF" /></> },
-  { t: "Beikost-Workshop", price: "25 €", c: "var(--butter)", icon: <><ellipse cx="20" cy="26" rx="14" ry="8" fill="#FBF6EF" /><path d="M14 22a6 6 0 0 1 12 0" fill="#F1CD75" /><path d="M30 8l-6 14" stroke="#7A7D6A" strokeWidth="3" strokeLinecap="round" /></> },
-  { t: "Krabbelgruppe", price: "18 €", c: "var(--mint)", icon: <><circle cx="14" cy="18" r="6" fill="#F3C4BB" /><ellipse cx="24" cy="26" rx="12" ry="7" fill="#ACB08D" /></> },
-  { t: "Mama-Baby-Yoga", price: "30 €", c: "var(--lav)", icon: <><circle cx="20" cy="10" r="5" fill="#EC9B86" /><path d="M20 15v12M10 20l10 4 10-4M14 36l6-9 6 9" stroke="#2F3138" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" /></> },
-  { t: "Eltern-Kind-Workshop", price: "25 €", c: "var(--sky)", icon: <><circle cx="13" cy="14" r="6" fill="#A9CFE2" /><circle cx="28" cy="18" r="4" fill="#F3C4BB" /><path d="M4 36c0-8 4-12 9-12s9 4 9 12zM20 36c0-6 3-9 8-9s8 3 8 9z" fill="#EC9B86" /></> },
+  { t: "Stillgruppe", c: "var(--peach)", icon: <><circle cx="20" cy="16" r="8" fill="#F3C4BB" /><path d="M8 36c0-8 5-12 12-12s12 4 12 12z" fill="#EC9B86" /><circle cx="26" cy="26" r="5" fill="#FBF6EF" /></> },
+  { t: "Beikost-Workshop", c: "var(--butter)", icon: <><ellipse cx="20" cy="26" rx="14" ry="8" fill="#FBF6EF" /><path d="M14 22a6 6 0 0 1 12 0" fill="#F1CD75" /><path d="M30 8l-6 14" stroke="#7A7D6A" strokeWidth="3" strokeLinecap="round" /></> },
+  { t: "Krabbelgruppe", c: "var(--mint)", icon: <><circle cx="14" cy="18" r="6" fill="#F3C4BB" /><ellipse cx="24" cy="26" rx="12" ry="7" fill="#ACB08D" /></> },
+  { t: "Mama-Baby-Yoga", c: "var(--lav)", icon: <><circle cx="20" cy="10" r="5" fill="#EC9B86" /><path d="M20 15v12M10 20l10 4 10-4M14 36l6-9 6 9" stroke="#2F3138" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" /></> },
+  { t: "Eltern-Kind-Workshop", c: "var(--sky)", icon: <><circle cx="13" cy="14" r="6" fill="#A9CFE2" /><circle cx="28" cy="18" r="4" fill="#F3C4BB" /><path d="M4 36c0-8 4-12 9-12s9 4 9 12zM20 36c0-6 3-9 8-9s8 3 8 9z" fill="#EC9B86" /></> },
 ];
 
 export function Courses() {
@@ -108,12 +108,12 @@ export function Courses() {
             <li className="course pop" key={c.t} style={vars({ "--c": c.c })}>
               <span className="ill"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">{c.icon}</svg></span>
               <h3>{c.t}</h3>
-              <div className="meta"><span>vormittags</span><b>{c.price}</b></div>
+              <div className="meta"><span>vormittags</span></div>
             </li>
           ))}
         </ul>
         <div className="specials pop">
-          <p>Dazu rund sechs Mal im Jahr besondere Feste, zum Beispiel Fasching und Halloween, um ca. 15 € pro Kind.</p>
+          <p>Dazu rund sechs Mal im Jahr besondere Feste, zum Beispiel Fasching und Halloween.</p>
           <OpenInquiryButton className="btn soft" type="Kursanmeldung">Platz im Kurs anfragen</OpenInquiryButton>
         </div>
       </div>
