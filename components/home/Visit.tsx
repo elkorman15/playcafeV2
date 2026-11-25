@@ -2,7 +2,6 @@ import Link from "next/link";
 import { LineIcon, Squiggle, Wave } from "@/components/Deco";
 import Logo from "@/components/Logo";
 import { Countdown, OpeningStatus, Year } from "@/components/Opening";
-import SignupForm from "@/components/SignupForm";
 import { vars } from "@/lib/css";
 import { FAQ, SITE } from "@/lib/site";
 
@@ -132,14 +131,17 @@ export function Signup() {
         </svg>
         <div>
           <h2 id="signup-title">Seid bei der Eröffnung dabei!</h2>
-          <p>Tragt euch ein und erfahrt als Erste, wann BiBi&apos;s playcafé öffnet und wann die Kurse starten.</p>
+          <p>Auf Instagram erfahrt ihr als Erste, wann BiBi&apos;s playcafé öffnet und wann die Kurse starten.</p>
           <span className="gift">
             <LineIcon width={2.2}><rect x="3" y="9" width="18" height="12" rx="2" /><path d="M12 9v12M3 13h18M12 9C10 5 6 5 7 8s5 1 5 1 4 2 5-1-3-3-5 1" /></LineIcon>
             Eröffnungswoche: Gratis-Muffin + Babyccino
           </span>
           <Countdown />
         </div>
-        <SignupForm />
+        <div className="signup-cta">
+          <p>Baustelle, Einrichtung und Eröffnungstermin: Wir nehmen euch auf Instagram mit.</p>
+          <a className="btn" href={SITE.instagram} rel="noopener">Folgt uns: {SITE.instagramHandle}</a>
+        </div>
       </div>
     </div>
   );

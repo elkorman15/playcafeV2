@@ -80,9 +80,8 @@ docker run --rm -p 3000:3000 bibis3
 ## Vor dem Livegang
 
 - [ ] Geschäfts-E-Mail in `lib/site.ts` eintragen
-- [ ] Impressum: GISA-Zahl, UID, Geschäfts-E-Mail; Datenschutz: Hosting- und Newsletter-Anbieter
+- [x] Impressum und Datenschutz ausgefüllt (GISA-Zahl, keine UID, office@bibis-playcafe.at, Hosting bei Hostinger, kein Newsletter)
 - [ ] Koordinaten und Öffnungszeiten prüfen
 - [ ] Hostinger-Zugangsdaten (`SMTP_USER`, `SMTP_PASS`) in Coolify eintragen und eine Test-Anfrage senden
-- [ ] Newsletter-Formular an einen Newsletter-Dienst anbinden
 - [ ] Google Business Profile, Search Console (Sitemap einreichen), PageSpeed Insights
 - [ ] Echte Fotos ergänzen

@@ -4,7 +4,7 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://bibis-play
 export const SITE = {
   name: "BiBi's playcafé",
   claim: "Spielen · Lernen · Lachen · Zusammen",
-  email: "hallo@DEINE-DOMAIN.at",
+  email: "office@bibis-playcafe.at",
   phone: "+436604201094",
   phoneDisplay: "0660 / 420 10 94",
   instagram: "https://www.instagram.com/bibis.playcafe/",

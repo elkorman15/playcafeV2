@@ -311,6 +311,7 @@ html,body{overflow-x:clip}
 .count b{display:block;font-family:var(--display);font-size:2.2rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
 .count span{font-size:.85rem;font-weight:700;color:var(--muted)}
 .form{position:relative;z-index:1;display:grid;gap:.8rem;background:var(--cream);border-radius:var(--r-lg);padding:1.5rem}
+.signup-cta{position:relative;z-index:1;display:grid;gap:1rem;justify-items:start;background:var(--cream);border-radius:var(--r-lg);padding:1.5rem;font-weight:600}
 .field{display:grid;gap:.35rem}
 .field label,.lbl{font-weight:800;font-size:.95rem}
 .input{width:100%;min-height:52px;padding:.8rem 1rem;border-radius:16px;border:2px solid var(--greige);background:#fff;color:var(--ink);font:600 1rem var(--body)}

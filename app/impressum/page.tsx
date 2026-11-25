@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import LegalShell, { Todo, legal as s } from "@/components/LegalShell";
+import LegalShell, { legal as s } from "@/components/LegalShell";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,13 +24,12 @@ export default function Impressum() {
           Österreich
         </address>
         <h2>Kontakt</h2>
-        <p>Telefon: <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a><br />E-Mail: <Todo>Geschäfts-E-Mail eintragen</Todo></p>
+        <p>Telefon: <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a><br />E-Mail: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
         <h2>Unternehmensangaben</h2>
         <p>
           Unternehmensgegenstand: Gastgewerbe (Kindercafé mit Spielbereich)<br />
           Rechtsform: Einzelunternehmen<br />
-          GISA-Zahl: <Todo>nach Gewerbeanmeldung eintragen</Todo><br />
-          UID-Nummer: <Todo>falls vorhanden eintragen</Todo><br />
+          GISA-Zahl: 40341415<br />
           Gewerbebehörde: Magistratisches Bezirksamt für den 20. Bezirk<br />
           Mitgliedschaft: Wirtschaftskammer Wien, Fachgruppe Gastronomie<br />
           Berufsrecht: Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" rel="noopener">ris.bka.gv.at</a>
