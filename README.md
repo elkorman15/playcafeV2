@@ -1,4 +1,4 @@
-# BiBi's playcafé – Website
+# playcafeV2 – BiBi's playcafé Website
 
 One-Pager für das Kindercafé in der Millennium City Wien, gebaut mit **Next.js 16 (App Router, TypeScript)**. Deployment wie bei bibis2: mehrstufiges Dockerfile auf `node:24-slim`, das einen Node-Server auf Port 3000 startet (Next.js `standalone`). Alle Seiten sind beim Build vorgerendert.
 
@@ -30,7 +30,7 @@ Die Domain wird über `NEXT_PUBLIC_SITE_URL` gesetzt (Standard: `https://DEINE-D
 | `scripts/csp-hashes.mjs` | Setzt nach dem Build pro Seite eine CSP mit SHA-256-Hashes der Inline-Skripte |
 | `next.config.ts` | `standalone`-Output, Sicherheits-Header, Cache-Header, Weiterleitungen alter URLs |
 | `Dockerfile` | Wie bibis2: `deps` → `build` → `runner` auf `node:24-slim`, Port 3000 |
-| `legacy/` | Die alte statische HTML-Version (nur zum Nachschlagen, kann gelöscht werden) |
+| `legacy/` | Nur lokal (in `.gitignore`): die alte statische HTML-Version zum Nachschlagen |
 
 ## Deployment mit Coolify
 
@@ -71,4 +71,3 @@ docker run --rm -p 3000:3000 bibis3
 - [ ] Formulare (Anfrage, Newsletter) an E-Mail bzw. Newsletter-Dienst anbinden
 - [ ] Google Business Profile, Search Console (Sitemap einreichen), PageSpeed Insights
 - [ ] Echte Fotos ergänzen
-# playcafeV2
