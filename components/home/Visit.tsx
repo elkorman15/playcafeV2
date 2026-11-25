@@ -13,10 +13,8 @@ const AMENITIES = [
 ];
 
 const HOURS = [
-  { th: "Spielbereich & Café", td: "Mo – Sa" },
-  { th: "Kurse", td: "vormittags unter der Woche" },
-  { th: "Feiern & Raummiete", td: "Mo – Sa, 16 – 19 Uhr" },
-  { th: "Sonntag", td: "Feiern & Workshops, 2 Zeitfenster" },
+  { th: "Montag – Samstag", td: "Uhrzeiten folgen" },
+  { th: "Sonntag", td: "Mietbar für Geburtstage & Feiern" },
 ];
 
 export function Visit() {
@@ -50,7 +48,7 @@ export function Visit() {
             </div>
             <h3>So findet ihr uns</h3>
             <address style={{ marginBottom: "1.1rem", fontWeight: 600, fontStyle: "normal" }}>
-              <b>{SITE.name}</b><br />Millennium City, Bauteil 2<br />Handelskai 94–96, 1200 Wien
+              <b>{SITE.name}</b><br />Millennium City, Bauteil 2<br />direkt über dem Kino<br />Handelskai 94–96, 1200 Wien
             </address>
             <ul className="transit">
               <li><span className="lb lb-u6" aria-label="U-Bahn-Linie U6">U6</span>Station Handelskai, wenige Gehminuten</li>
@@ -73,7 +71,7 @@ export function Visit() {
               </tbody>
             </table>
             <p id="hn" style={{ color: "var(--muted)", fontSize: ".92rem", marginTop: ".9rem", fontWeight: 600 }}>
-              Unsere Öffnungszeiten richten sich nach der Gastronomie der Millennium City. Die genauen Uhrzeiten geben wir vor der Eröffnung bekannt.
+              Die genauen Uhrzeiten geben wir vor der Eröffnung bekannt.
             </p>
             <h3 style={{ marginTop: "1.8rem" }}>Kontakt</h3>
             <p className="contact" style={{ fontWeight: 600 }}>
