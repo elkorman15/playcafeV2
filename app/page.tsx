@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     url: "/",
-    title: "BiBi's playcafé – Kindercafé für 0–4 Jahre in Wien",
+    title: "BiBi's playcafé – Kindercafé für 0–5 Jahre in Wien",
     description: "Spielen · Lernen · Lachen · Zusammen. Kindercafé mit Montessori-Spielbereich in der Millennium City. Eröffnung März 2027.",
     images: [{ url: "/assets/og-image.jpg", width: 1200, height: 630, alt: "Logo von BiBi's playcafé" }],
     locale: "de_AT",
@@ -32,7 +32,7 @@ const jsonLd = [
     name: SITE.name,
     alternateName: "BiBi's Familienraum",
     slogan: SITE.claim,
-    description: "Montessori-orientiertes Kindercafé mit Spielbereich für Kinder von 0 bis 4 Jahren und ihre Eltern.",
+    description: "Montessori-orientiertes Kindercafé mit Spielbereich für Kinder von 0 bis 5 Jahren und ihre Eltern.",
     url: `${SITE_URL}/`,
     logo: `${SITE_URL}/assets/bibis-logo.png`,
     image: `${SITE_URL}/assets/og-image.jpg`,
@@ -45,7 +45,7 @@ const jsonLd = [
     address: { "@type": "PostalAddress", streetAddress: "Handelskai 94–96, Millennium City, Bauteil 2, Top 02-04.0", postalCode: "1200", addressLocality: "Wien", addressRegion: "Wien", addressCountry: "AT" },
     geo: { "@type": "GeoCoordinates", latitude: 48.2412, longitude: 16.3847 },
     hasMap: SITE.mapsUrl,
-    amenityFeature: ["Spielbereich 0–4 Jahre", "Gratis WLAN", "Arbeitsplätze", "Stillfreundlich", "Hochstühle", "Raumvermietung für Feiern und Workshops"]
+    amenityFeature: ["Spielbereich 0–5 Jahre", "Gratis WLAN", "Arbeitsplätze", "Stillfreundlich", "Hochstühle", "Raumvermietung für Feiern und Workshops"]
       .map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
     sameAs: [SITE.instagram],
   },

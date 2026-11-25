@@ -5,7 +5,7 @@ import { PRICE } from "@/lib/site";
 
 const WHY = [
   {
-    t: "Nur für 0–4 Jahre", c: "var(--peach)",
+    t: "Nur für 0–5 Jahre", c: "var(--peach)",
     p: "Alles ist auf Babys und Kleinkinder abgestimmt. Große Kinder, die wild herumtoben, gibt es hier nicht.",
     icon: <><circle cx="24" cy="20" r="11" fill="#F3C4BB" /><circle cx="20" cy="19" r="1.8" fill="#2F3138" /><circle cx="28" cy="19" r="1.8" fill="#2F3138" /><path d="M20 24q4 3 8 0" stroke="#2F3138" strokeWidth="2" fill="none" strokeLinecap="round" /><path d="M12 42c0-7 5-11 12-11s12 4 12 11" fill="#EC9B86" /></>,
   },
@@ -59,19 +59,19 @@ export function Why() {
 const CORNERS = [
   { age: "0–1 J.", t: "Ruhiger Babybereich", p: "Weich, geschützt und abgetrennt für die Allerkleinsten.",
     icon: <><circle cx="48" cy="48" r="44" fill="#F7D9CF" /><path d="M48 20v12" stroke="#7A7D6A" strokeWidth="3" /><circle cx="48" cy="40" r="9" fill="#F1CD75" /><circle cx="32" cy="56" r="8" fill="#A9CFE2" /><circle cx="64" cy="56" r="8" fill="#ACB08D" /><path d="M28 44L48 32 68 44" stroke="#7A7D6A" strokeWidth="2" fill="none" /></> },
-  { age: "1–4 J.", t: "Montessori & Sensorik", p: "Mit großer Busy-Board-Wand zum Drehen, Schieben und Entdecken.",
+  { age: "1–5 J.", t: "Montessori & Sensorik", p: "Mit großer Busy-Board-Wand zum Drehen, Schieben und Entdecken.",
     icon: <><rect x="8" y="12" width="80" height="72" rx="14" fill="#DCECF4" /><circle cx="30" cy="34" r="9" fill="#EC9B86" /><rect x="52" y="26" width="20" height="16" rx="4" fill="#F1CD75" /><path d="M22 64h20" stroke="#7A7D6A" strokeWidth="6" strokeLinecap="round" /><circle cx="64" cy="62" r="8" fill="none" stroke="#ACB08D" strokeWidth="5" /></> },
-  { age: "2–4 J.", t: "Spielküche & Supermarkt", p: "Kochen, einkaufen und bezahlen wie die Großen.",
+  { age: "2–5 J.", t: "Spielküche & Supermarkt", p: "Kochen, einkaufen und bezahlen wie die Großen.",
     icon: <><rect x="12" y="30" width="72" height="54" rx="10" fill="#EC9B86" /><circle cx="34" cy="46" r="8" fill="#FBF6EF" /><circle cx="62" cy="46" r="8" fill="#FBF6EF" /><rect x="22" y="62" width="52" height="14" rx="4" fill="#F7D9CF" /><path d="M40 30V18h16v12" stroke="#7A7D6A" strokeWidth="4" fill="none" /></> },
-  { age: "1–4 J.", t: "Fahrzeug- & Bahn-Ecke", p: "Holzeisenbahn, Rutschautos und Schienen zum Bauen.",
+  { age: "1–5 J.", t: "Fahrzeug- & Bahn-Ecke", p: "Holzeisenbahn, Rutschautos und Schienen zum Bauen.",
     icon: <><rect x="14" y="40" width="56" height="24" rx="8" fill="#A9CFE2" /><rect x="24" y="28" width="28" height="16" rx="5" fill="#DCECF4" /><circle cx="28" cy="68" r="9" fill="#2F3138" /><circle cx="58" cy="68" r="9" fill="#2F3138" /><path d="M8 82h80" stroke="#C9A47C" strokeWidth="5" strokeLinecap="round" /></> },
-  { age: "2–4 J.", t: "Bau-Ecke", p: "Große Bausteine, die in kleine Hände passen.",
+  { age: "2–5 J.", t: "Bau-Ecke", p: "Große Bausteine, die in kleine Hände passen.",
     icon: <><rect x="12" y="44" width="34" height="22" rx="4" fill="#F1CD75" /><rect x="48" y="44" width="34" height="22" rx="4" fill="#ACB08D" /><rect x="30" y="22" width="34" height="22" rx="4" fill="#EC9B86" /><g fill="#FBF6EF" opacity=".7"><circle cx="22" cy="44" r="4" /><circle cx="36" cy="44" r="4" /><circle cx="40" cy="22" r="4" /><circle cx="54" cy="22" r="4" /></g></> },
   { age: "alle", t: "Lese- & Ruheecke", p: "Bilderbücher und Kissen zum Kuscheln und Ausruhen.",
     icon: <><path d="M48 30c-12-8-28-8-36-4v50c8-4 24-4 36 4 12-8 28-8 36-4V26c-8-4-24-4-36 4z" fill="#D9E3EC" /><path d="M48 30v50" stroke="#7A7D6A" strokeWidth="3" /><circle cx="70" cy="16" r="6" fill="#F1CD75" /></> },
-  { age: "2–4 J.", t: "Mal- & Bastelecke", p: "Fingerfarben, Wachsmalkreiden und kleine Kunstwerke.",
+  { age: "2–5 J.", t: "Mal- & Bastelecke", p: "Fingerfarben, Wachsmalkreiden und kleine Kunstwerke.",
     icon: <><circle cx="48" cy="48" r="40" fill="#FCF2DD" /><circle cx="34" cy="38" r="7" fill="#EC9B86" /><circle cx="54" cy="32" r="7" fill="#A9CFE2" /><circle cx="64" cy="52" r="7" fill="#ACB08D" /><path d="M30 70l26-26" stroke="#7A7D6A" strokeWidth="6" strokeLinecap="round" /></> },
-  { age: "2–4 J.", t: "Kostümecke", p: "Verkleiden, Rollenspiele und ganz viel Fantasie.",
+  { age: "2–5 J.", t: "Kostümecke", p: "Verkleiden, Rollenspiele und ganz viel Fantasie.",
     icon: <><path d="M48 14l30 18v14H18V32z" fill="#F3C4BB" /><path d="M28 46h40v34H28z" fill="#C7CEB6" /><path d="M36 20q12-10 24 0" stroke="#F1CD75" strokeWidth="6" fill="none" strokeLinecap="round" /></> },
 ];
 

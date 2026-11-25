@@ -36,7 +36,7 @@ export default function Impressum() {
           Berufsrecht: Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" rel="noopener">ris.bka.gv.at</a>
         </p>
         <h2>Blattlinie</h2>
-        <p>Information über das Angebot von BiBi&apos;s playcafé: Spielbereich, Café, Kurse und Feiern für Familien mit Kindern von 0 bis 4 Jahren.</p>
+        <p>Information über das Angebot von BiBi&apos;s playcafé: Spielbereich, Café, Kurse und Feiern für Familien mit Kindern von 0 bis 5 Jahren.</p>
         <h2>Haftung für Inhalte und Links</h2>
         <p>Wir erstellen die Inhalte dieser Website mit Sorgfalt, übernehmen aber keine Gewähr für Vollständigkeit und Aktualität. Für Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
       </div>

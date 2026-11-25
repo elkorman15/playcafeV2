@@ -156,7 +156,7 @@ export function Footer() {
           <div>
             <Logo href="#main" label="BiBi's playcafé, nach oben" />
             <p className="claim">{SITE.claim}</p>
-            <p>Das Kindercafé für 0–4 Jahre in der Millennium City Wien.</p>
+            <p>Das Kindercafé für 0–5 Jahre in der Millennium City Wien.</p>
           </div>
           <nav aria-labelledby="f-entdecken"><h2 id="f-entdecken" className="fh">Entdecken</h2><ul>
             <li><a href="#spielen">Spielwelt</a></li><li><a href="#karte">Speisekarte</a></li><li><a href="#kurse">Kurse</a></li><li><a href="#arbeiten">Remote Work</a></li>

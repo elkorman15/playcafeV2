@@ -12,11 +12,11 @@ const nunito = Nunito({ subsets: ["latin"], weight: ["400", "600", "700", "800"]
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "BiBi's playcafé · Kindercafé für 0–4 Jahre in Wien (Millennium City)",
+    default: "BiBi's playcafé · Kindercafé für 0–5 Jahre in Wien (Millennium City)",
     template: "%s · BiBi's playcafé",
   },
   description:
-    "Montessori-orientiertes Kindercafé mit Spielbereich für Babys und Kleinkinder von 0 bis 4 Jahren in der Millennium City, 1200 Wien. Barista-Kaffee, Arbeitsplätze mit WLAN, Kurse und Raumvermietung für Feiern. Eröffnung März 2027.",
+    "Montessori-orientiertes Kindercafé mit Spielbereich für Babys und Kleinkinder von 0 bis 5 Jahren in der Millennium City, 1200 Wien. Barista-Kaffee, Arbeitsplätze mit WLAN, Kurse und Raumvermietung für Feiern. Eröffnung März 2027.",
   applicationName: SITE.name,
   formatDetection: { telephone: false },
   icons: {

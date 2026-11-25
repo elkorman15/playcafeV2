@@ -9,7 +9,7 @@ const WORDS = [
 ];
 
 const CHIPS = [
-  { t: "0–4 Jahre", c: "var(--terra)" },
+  { t: "0–5 Jahre", c: "var(--terra)" },
   { t: "Montessori-orientiert", c: "var(--blue)" },
   { t: "Ruhig statt laut", c: "var(--sage)" },
   { t: "Gratis WLAN", c: "var(--mustard)" },
@@ -30,7 +30,7 @@ export default function Hero() {
             Eröffnung März 2027 · Millennium City
           </span>
           <h1 id="h1">
-            <span className="h1-pre">Kindercafé in Wien · 0–4 Jahre</span>
+            <span className="h1-pre">Kindercafé in Wien · 0–5 Jahre</span>
             {WORDS.map(({ w, c, d }, i) => (
               <span key={w}>
                 <span className={`wd ${c}`} style={vars({ "--d": d })}>{w}</span>
@@ -38,7 +38,7 @@ export default function Hero() {
               </span>
             ))}
           </h1>
-          <p className="lead">Das Kindercafé für Babys und Kleinkinder von 0 bis 4 Jahren. Eure Kleinen spielen sicher und ruhig, ihr genießt Barista-Kaffee gleich daneben.</p>
+          <p className="lead">Das Kindercafé für Babys und Kleinkinder von 0 bis 5 Jahren. Eure Kleinen spielen sicher und ruhig, ihr genießt Barista-Kaffee gleich daneben.</p>
           <div className="hero-actions">
             <a className="btn" href="#preise">Eintritt &amp; Preise<LineIcon width={2.6} d="M5 12h14M13 6l6 6-6 6" /></a>
             <a className="btn soft" href="#eroeffnung">Zur Eröffnung erinnern</a>

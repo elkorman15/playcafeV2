@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: SITE.name,
     short_name: "BiBi's",
-    description: "Kindercafé mit Montessori-Spielbereich für Kinder von 0 bis 4 Jahren in der Millennium City Wien.",
+    description: "Kindercafé mit Montessori-Spielbereich für Kinder von 0 bis 5 Jahren in der Millennium City Wien.",
     lang: "de-AT",
     start_url: "/",
     display: "standalone",

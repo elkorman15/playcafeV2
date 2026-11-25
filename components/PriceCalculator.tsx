@@ -4,7 +4,7 @@ import { PRICE, entryPrice } from "@/lib/site";
 
 type Key = "kids" | "adults";
 const ROWS: { key: Key; label: string; hint: string; less: string; more: string }[] = [
-  { key: "kids", label: "Kinder", hint: "0 bis 4 Jahre", less: "Ein Kind weniger", more: "Ein Kind mehr" },
+  { key: "kids", label: "Kinder", hint: "0 bis 5 Jahre", less: "Ein Kind weniger", more: "Ein Kind mehr" },
   { key: "adults", label: "Erwachsene", hint: "Eltern, Oma, Opa …", less: "Eine erwachsene Person weniger", more: "Eine erwachsene Person mehr" },
 ];
 
