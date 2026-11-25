@@ -1,5 +1,5 @@
 // Zentrale Angaben: hier einmal ändern, gilt überall (Metadaten, JSON-LD, Sitemap, Kontakt).
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://DEINE-DOMAIN.at").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://bibis-playcafe.at").replace(/\/$/, "");
 
 export const SITE = {
   name: "BiBi's playcafé",

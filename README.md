@@ -12,7 +12,7 @@ npm start          # Build lokal starten (vorher .next/static und public nach .n
 npm run typecheck
 ```
 
-Die Domain wird über `NEXT_PUBLIC_SITE_URL` gesetzt (Standard: `https://DEINE-DOMAIN.at`) und gilt für Canonical, Open Graph, JSON-LD, `robots.txt` und `sitemap.xml`.
+Die Domain wird über `NEXT_PUBLIC_SITE_URL` gesetzt (Standard: `https://bibis-playcafe.at`) und gilt für Canonical, Open Graph, JSON-LD, `robots.txt` und `sitemap.xml`.
 
 ## Aufbau
 
@@ -34,7 +34,7 @@ Die Domain wird über `NEXT_PUBLIC_SITE_URL` gesetzt (Standard: `https://DEINE-D
 
 ## Deployment mit Coolify
 
-Wie bei bibis2: Neue Ressource aus dem Repo, Build Pack „Dockerfile“, **Port 3000**. Optional Build-Argument `NEXT_PUBLIC_SITE_URL=https://eure-domain.at`. HTTPS übernimmt Coolify (Traefik). Der Container läuft als Benutzer `node` und hat einen Healthcheck. Alte URLs (`/impressum.html` usw.) werden per 308 auf die neuen Pfade umgeleitet.
+Wie bei bibis2: Neue Ressource aus dem Repo, Build Pack „Dockerfile“, **Port 3000**. Standard-Domain ist `https://bibis-playcafe.at`, abweichend per Build-Argument `NEXT_PUBLIC_SITE_URL`. HTTPS übernimmt Coolify (Traefik). Der Container läuft als Benutzer `node` und hat einen Healthcheck. Alte URLs (`/impressum.html` usw.) werden per 308 auf die neuen Pfade umgeleitet.
 
 Lokal testen:
 
@@ -65,7 +65,7 @@ docker run --rm -p 3000:3000 bibis3
 
 ## Vor dem Livegang
 
-- [ ] `NEXT_PUBLIC_SITE_URL` setzen und E-Mail in `lib/site.ts` eintragen
+- [ ] Geschäfts-E-Mail in `lib/site.ts` eintragen
 - [ ] Impressum: GISA-Zahl, UID, Geschäfts-E-Mail; Datenschutz: Hosting- und Newsletter-Anbieter
 - [ ] Koordinaten und Öffnungszeiten prüfen
 - [ ] Formulare (Anfrage, Newsletter) an E-Mail bzw. Newsletter-Dienst anbinden
