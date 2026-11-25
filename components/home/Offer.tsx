@@ -188,10 +188,10 @@ export function Party() {
             <div className="head" style={{ marginBottom: 0 }}>
               <span className="kicker" style={vars({ "--k": "var(--peach)" })}>Feiern &amp; Raumvermietung</span>
               <h2 id="feier-title">Mietet das ganze playcafé für euer Fest oder euren Workshop.</h2>
-              <p>Am späten Nachmittag und am Sonntag gehört der ganze Raum euch: für Geburtstage, Babyshower und Taufen, aber auch für Kurse und Workshops von Hebammen, Kursleiter:innen und Elternvereinen.</p>
+              <p>Am späten Nachmittag und am Sonntag gehört der ganze Raum euch: für Geburtstage, Babyshower und Babyfeiern, aber auch für Kurse und Workshops von Hebammen, Kursleiter:innen und Elternvereinen.</p>
             </div>
             <ul className="occasions" aria-label="Anlässe">
-              {["Kindergeburtstag", "Babyshower", "Taufe", "Kurse & Workshops", "Eltern-Treffen"].map((o) => <li key={o}>{o}</li>)}
+              {["Kindergeburtstag", "Babyshower", "Babyfeier", "Kurse & Workshops", "Eltern-Treffen"].map((o) => <li key={o}>{o}</li>)}
             </ul>
             <ul className="slots" role="list" aria-label="Zeitfenster und Preise">
               {SLOTS.map((s) => (
