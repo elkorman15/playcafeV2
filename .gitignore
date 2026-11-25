@@ -10,3 +10,4 @@ next-env.d.ts
 legacy/
 .env
 .env.*
+!.env.example

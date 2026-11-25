@@ -26,6 +26,7 @@ Die Domain wird über `NEXT_PUBLIC_SITE_URL` gesetzt (Standard: `https://bibis-p
 | `components/home/*` | Abschnitte der Startseite (Server Components, kein JS im Browser) |
 | `components/Header`, `Inquiry`, `MenuTabs`, `PriceCalculator`, `SignupForm`, `Opening` | Interaktive Teile (Client Components) |
 | `lib/site.ts` | Zentrale Daten: Kontakt, Navigation, Preise, FAQ |
+| `app/api/anfrage/route.ts`, `lib/mailer.ts` | Anfrageformular → E-Mail über Hostinger-SMTP |
 | `public/` | Logo, Icons, OG-Bild, Service Worker |
 | `scripts/csp-hashes.mjs` | Setzt nach dem Build pro Seite eine CSP mit SHA-256-Hashes der Inline-Skripte |
 | `next.config.ts` | `standalone`-Output, Sicherheits-Header, Cache-Header, Weiterleitungen alter URLs |
@@ -35,6 +36,19 @@ Die Domain wird über `NEXT_PUBLIC_SITE_URL` gesetzt (Standard: `https://bibis-p
 ## Deployment mit Coolify
 
 Wie bei bibis2: Neue Ressource aus dem Repo, Build Pack „Dockerfile“, **Port 3000**. Standard-Domain ist `https://bibis-playcafe.at`, abweichend per Build-Argument `NEXT_PUBLIC_SITE_URL`. HTTPS übernimmt Coolify (Traefik). Der Container läuft als Benutzer `node` und hat einen Healthcheck. Alte URLs (`/impressum.html` usw.) werden per 308 auf die neuen Pfade umgeleitet.
+
+### Anfrageformular (E-Mail über Hostinger)
+
+Das Formular „Anfrage senden“ schickt die Angaben über `/api/anfrage` per SMTP an euer Hostinger-Postfach. In Coolify unter **Environment Variables** (Laufzeit, *nicht* als Build-Argument) eintragen:
+
+| Variable | Wert |
+| --- | --- |
+| `SMTP_USER` | Hostinger-Postfach, z. B. `hallo@bibis-playcafe.at` |
+| `SMTP_PASS` | Passwort dieses Postfachs |
+| `MAIL_TO` | optional: Empfänger der Anfragen (Standard: `SMTP_USER`) |
+| `SMTP_HOST`, `SMTP_PORT` | optional, Standard `smtp.hostinger.com` und `465` |
+
+Die Antwort-Adresse der Mail ist die E-Mail der anfragenden Person, ein Klick auf „Antworten“ genügt. Schutz: Honeypot-Feld, max. 5 Anfragen pro IP in 10 Minuten, Längenbegrenzung, nur Anfragen von der eigenen Seite. Fehlen die Zugangsdaten, zeigt das Formular einen Hinweis statt still zu scheitern.
 
 Lokal testen:
 
@@ -68,6 +82,7 @@ docker run --rm -p 3000:3000 bibis3
 - [ ] Geschäfts-E-Mail in `lib/site.ts` eintragen
 - [ ] Impressum: GISA-Zahl, UID, Geschäfts-E-Mail; Datenschutz: Hosting- und Newsletter-Anbieter
 - [ ] Koordinaten und Öffnungszeiten prüfen
-- [ ] Formulare (Anfrage, Newsletter) an E-Mail bzw. Newsletter-Dienst anbinden
+- [ ] Hostinger-Zugangsdaten (`SMTP_USER`, `SMTP_PASS`) in Coolify eintragen und eine Test-Anfrage senden
+- [ ] Newsletter-Formular an einen Newsletter-Dienst anbinden
 - [ ] Google Business Profile, Search Console (Sitemap einreichen), PageSpeed Insights
 - [ ] Echte Fotos ergänzen

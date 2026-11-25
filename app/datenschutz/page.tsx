@@ -24,7 +24,7 @@ export default function Datenschutz() {
         <h2>Schriftarten</h2>
         <p>Die Schriften „Fredoka“ und „Nunito“ werden direkt von unserem Server ausgeliefert. Beim Besuch der Website werden dafür keine Daten an Google oder andere Dritte übertragen.</p>
         <h2>Anfrage- und Kontaktformular</h2>
-        <p>Wenn ihr uns über das Formular oder per E-Mail kontaktiert, verarbeiten wir eure Angaben (zum Beispiel Name, E-Mail-Adresse und Wunschtermin), um eure Anfrage zu beantworten (Art. 6 Abs. 1 lit. b DSGVO). Wir löschen die Daten nach Erledigung, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+        <p>Wenn ihr uns über das Anfrageformular oder per E-Mail kontaktiert, verarbeiten wir eure Angaben (Art der Anfrage, Name, E-Mail-Adresse, Wunschtermin, Anzahl der Kinder und eure Nachricht), um eure Anfrage zu beantworten (Art. 6 Abs. 1 lit. b DSGVO). Das Formular schickt eure Angaben als E-Mail an unser Postfach; die Website selbst speichert sie nicht. Unser E-Mail-Postfach wird von Hostinger International Ltd. (Zypern, EU) betrieben. Wir löschen die Daten nach Erledigung, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
         <h2>Newsletter</h2>
         <p>Für den Newsletter speichern wir eure E-Mail-Adresse und euren Vornamen auf Grundlage eurer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ihr könnt euch jederzeit abmelden. Newsletter-Dienst: <Todo>eintragen</Todo></p>
         <h2>Eure Rechte</h2>

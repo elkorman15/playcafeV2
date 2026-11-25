@@ -32,16 +32,42 @@ export function InquiryProvider({ children }: { children: React.ReactNode }) {
     return () => d.removeEventListener("close", onClose);
   }, []);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [sending, setSending] = useState(false);
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (sending) return;
     const f = e.currentTarget;
-    const name = (f.elements.namedItem("name") as HTMLInputElement).value.trim();
-    const mail = (f.elements.namedItem("email") as HTMLInputElement).value.trim();
-    const date = (f.elements.namedItem("date") as HTMLInputElement).value;
-    if (!name) { setStatus({ error: "Bitte euren Namen eingeben.", field: "name" }); (f.elements.namedItem("name") as HTMLElement).focus(); return; }
-    if (!isValidEmail(mail)) { setStatus({ error: "Bitte eine gültige E-Mail-Adresse eingeben.", field: "mail" }); (f.elements.namedItem("email") as HTMLElement).focus(); return; }
-    const dt = date ? " für den " + new Date(date + "T12:00:00").toLocaleDateString("de-AT", { day: "numeric", month: "long", year: "numeric" }) : "";
-    setStatus({ ok: `${type}${dt}: Alles ausgefüllt. Vorschau: Das Formular wird beim Livegang mit eurer E-Mail verbunden, es wurde noch nichts gesendet.` });
+    const val = (n: string) => (f.elements.namedItem(n) as HTMLInputElement | null)?.value ?? "";
+    const focus = (n: string) => (f.elements.namedItem(n) as HTMLElement | null)?.focus();
+    const name = val("name").trim();
+    const mail = val("email").trim();
+    const date = val("date");
+    if (!name) { setStatus({ error: "Bitte euren Namen eingeben.", field: "name" }); focus("name"); return; }
+    if (!isValidEmail(mail)) { setStatus({ error: "Bitte eine gültige E-Mail-Adresse eingeben.", field: "mail" }); focus("email"); return; }
+
+    setSending(true);
+    setStatus({});
+    try {
+      const res = await fetch("/api/anfrage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type, name, email: mail, date, kids: val("kids"), note: val("note"), website: val("website") }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string; field?: "name" | "mail" };
+      if (!res.ok) {
+        setStatus({ error: data.error ?? "Senden hat leider nicht geklappt. Bitte versucht es später noch einmal.", field: data.field });
+        if (data.field) focus(data.field === "mail" ? "email" : "name");
+        return;
+      }
+      const dt = date ? " für den " + new Date(date + "T12:00:00").toLocaleDateString("de-AT", { day: "numeric", month: "long", year: "numeric" }) : "";
+      f.reset();
+      setStatus({ ok: `Danke, ${name}! Eure Anfrage (${type}${dt}) ist bei uns angekommen. Wir melden uns so bald wie möglich per E-Mail.` });
+    } catch {
+      setStatus({ error: "Keine Verbindung. Bitte prüft euer Internet und versucht es noch einmal." });
+    } finally {
+      setSending(false);
+    }
   };
 
   const id = useId();
@@ -78,7 +104,13 @@ export function InquiryProvider({ children }: { children: React.ReactNode }) {
               <span className="err" id={`${id}-err`} aria-live="polite">{status.error}</span>
             </div>
             <div className="field"><label htmlFor={`${id}-note`}>Nachricht (optional)</label><textarea className="input" id={`${id}-note`} name="note" rows={3} style={{ resize: "vertical" }} /></div>
-            <button className="btn" type="submit">Anfrage prüfen</button>
+            {/* Honeypot gegen Spam-Bots: für Menschen unsichtbar und nicht per Tab erreichbar */}
+            <div className="sr-only" aria-hidden="true">
+              <label htmlFor={`${id}-web`}>Website</label>
+              <input id={`${id}-web`} name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
+            <p className="dlg-note">Wir verwenden eure Angaben nur, um die Anfrage zu beantworten. Mehr dazu im <a href="/datenschutz">Datenschutz</a>.</p>
+            <button className="btn" type="submit" disabled={sending} aria-busy={sending}>{sending ? "Wird gesendet …" : "Anfrage senden"}</button>
             <div className="msg" role="status" hidden={!status.ok}>{status.ok}</div>
           </div>
         </form>
