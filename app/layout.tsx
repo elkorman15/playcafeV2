@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import { SITE, SITE_URL } from "@/lib/site";
 import ServiceWorker from "@/components/ServiceWorker";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 // next/font lädt die Schriften beim Build herunter und liefert sie selbst aus:
@@ -39,6 +40,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <ServiceWorker />
+        <Analytics
+          scriptUrl={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
+          hostUrl={process.env.NEXT_PUBLIC_UMAMI_HOST_URL}
+          websiteId={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+        />
       </body>
     </html>
   );

@@ -56,7 +56,7 @@ export function Visit() {
               <li><span className="lb lb-p" aria-label="Parken">P</span>Parkgarage im Haus</li>
             </ul>
             <p style={{ marginTop: "1.3rem" }}>
-              <a className="btn soft" href={SITE.mapsUrl} target="_blank" rel="noopener noreferrer">
+              <a className="btn soft" href={SITE.mapsUrl} data-analytics-event="cta_click" data-analytics-target="maps" data-analytics-placement="besuch" target="_blank" rel="noopener noreferrer">
                 Route planen<span className="sr-only"> (öffnet Google Maps in neuem Tab)</span>
               </a>
             </p>
@@ -75,9 +75,9 @@ export function Visit() {
             </p>
             <h3 style={{ marginTop: "1.8rem" }}>Kontakt</h3>
             <p className="contact" style={{ fontWeight: 600 }}>
-              Telefon: <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a><br />
-              E-Mail: <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
-              Instagram: <a href={SITE.instagram} rel="noopener">{SITE.instagramHandle}</a>
+              Telefon: <a href={`tel:${SITE.phone}`} data-analytics-event="cta_click" data-analytics-target="telefon" data-analytics-placement="kontakt">{SITE.phoneDisplay}</a><br />
+              E-Mail: <a href={`mailto:${SITE.email}`} data-analytics-event="cta_click" data-analytics-target="email" data-analytics-placement="kontakt">{SITE.email}</a><br />
+              Instagram: <a href={SITE.instagram} rel="noopener" data-analytics-event="cta_click" data-analytics-target="instagram" data-analytics-placement="kontakt">{SITE.instagramHandle}</a>
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@ export function Signup() {
         </div>
         <div className="signup-cta">
           <p>Baustelle, Einrichtung und Eröffnungstermin: Wir nehmen euch auf Instagram mit.</p>
-          <a className="btn" href={SITE.instagram} rel="noopener">Folgt uns: {SITE.instagramHandle}</a>
+          <a className="btn" href={SITE.instagram} rel="noopener" data-analytics-event="cta_click" data-analytics-target="instagram" data-analytics-placement="social">Folgt uns: {SITE.instagramHandle}</a>
         </div>
       </div>
     </div>

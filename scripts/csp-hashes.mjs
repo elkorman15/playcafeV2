@@ -18,6 +18,10 @@ async function* htmlFiles(dir) {
   }
 }
 
+// Das Umami-Skript kommt von einem eigenen Host und muss auch in der Meta-CSP erlaubt sein.
+const originOf = (v) => { try { return v ? new URL(v).origin : ""; } catch { return ""; } };
+const UMAMI = [...new Set([process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL].map(originOf).filter(Boolean))];
+
 const SCRIPT = /<script(?![^>]*\bsrc=)([^>]*)>([\s\S]*?)<\/script>/gi;
 let pages = 0;
 for (const dir of DIRS) {
@@ -29,7 +33,7 @@ for (const dir of DIRS) {
       if (/type=["']?application\/(ld\+)?json/i.test(attrs) || !body) continue; // Daten, kein ausführbarer Code
       hashes.add(`'sha256-${createHash("sha256").update(body, "utf8").digest("base64")}'`);
     }
-    const meta = `<meta http-equiv="Content-Security-Policy" content="${["script-src 'self'", ...hashes].join(" ")}"/>`;
+    const meta = `<meta http-equiv="Content-Security-Policy" content="${["script-src 'self'", ...UMAMI, ...hashes].join(" ")}"/>`;
     html = html.replace(/<meta charSet="utf-8"\/>/i, (m) => `${m}${meta}`);
     if (!html.includes(meta)) throw new Error(`CSP-Meta konnte nicht eingefügt werden: ${file}`);
     await writeFile(file, html);

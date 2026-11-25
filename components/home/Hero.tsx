@@ -40,8 +40,8 @@ export default function Hero() {
           </h1>
           <p className="lead">Das Kindercafé für Babys und Kleinkinder von 0 bis 5 Jahren. Eure Kleinen spielen sicher und ruhig, ihr genießt Barista-Kaffee gleich daneben.</p>
           <div className="hero-actions">
-            <a className="btn" href="#preise">Eintritt &amp; Preise<LineIcon width={2.6} d="M5 12h14M13 6l6 6-6 6" /></a>
-            <a className="btn soft" href="#eroeffnung">Zur Eröffnung erinnern</a>
+            <a className="btn" href="#preise" data-analytics-event="cta_click" data-analytics-target="preise" data-analytics-placement="hero">Eintritt &amp; Preise<LineIcon width={2.6} d="M5 12h14M13 6l6 6-6 6" /></a>
+            <a className="btn soft" href="#eroeffnung" data-analytics-event="cta_click" data-analytics-target="eroeffnung" data-analytics-placement="hero">Zur Eröffnung erinnern</a>
           </div>
           <ul className="chips" aria-label="Auf einen Blick">
             {CHIPS.map(({ t, c }) => <li key={t}><i style={vars({ "--c": c })} aria-hidden="true" />{t}</li>)}

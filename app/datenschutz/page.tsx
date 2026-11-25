@@ -20,7 +20,9 @@ export default function Datenschutz() {
         <h2>Besuch der Website</h2>
         <p>Beim Aufruf der Website speichert unser Hosting-Anbieter technisch notwendige Daten (IP-Adresse, Datum, Uhrzeit, aufgerufene Seite, Browser) in Server-Logfiles. Das dient dem sicheren Betrieb der Website (Art. 6 Abs. 1 lit. f DSGVO). Hosting-Anbieter: Hostinger International Ltd. (Zypern, EU).</p>
         <h2>Cookies und Tracking</h2>
-        <p>Wir setzen keine Tracking- oder Marketing-Cookies und keine Analyse-Tools ein.</p>
+        <p>Wir setzen keine Cookies und keine Marketing- oder Werbe-Tracker ein.</p>
+        <h2>Reichweitenmessung mit Umami</h2>
+        <p>Um zu verstehen, wie unsere Website genutzt wird, setzen wir das Open-Source-Tool Umami ein, das wir selbst auf einem eigenen Server betreiben. Umami arbeitet ohne Cookies und ohne geräteübergreifende Kennung. Erfasst werden aufgerufene Seiten, die verweisende Website, Kampagnen-Parameter (utm_*), ungefähre Herkunft auf Länderebene, Browser, Betriebssystem und Gerätetyp sowie Klicks auf wichtige Schaltflächen (z. B. „Anfrage senden“, Anfahrt, Instagram) und die Art einer gesendeten Anfrage. Namen, E-Mail-Adressen und Inhalte eurer Anfragen werden nicht an Umami übermittelt. Eure IP-Adresse wird nur kurz zur Bildung einer anonymen, regelmäßig wechselnden Besuchskennung verwendet und nicht gespeichert. Ist in eurem Browser „Do Not Track“ aktiviert, findet keine Messung statt. Rechtsgrundlage ist unser berechtigtes Interesse an einer datensparsamen Reichweitenmessung (Art. 6 Abs. 1 lit. f DSGVO). Die Daten werden nicht an Dritte weitergegeben.</p>
         <h2>Schriftarten</h2>
         <p>Die Schriften „Fredoka“ und „Nunito“ werden direkt von unserem Server ausgeliefert. Beim Besuch der Website werden dafür keine Daten an Google oder andere Dritte übertragen.</p>
         <h2>Anfrage- und Kontaktformular</h2>

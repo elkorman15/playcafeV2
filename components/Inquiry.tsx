@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { INQUIRY_TYPES, isValidEmail, type InquiryType } from "@/lib/site";
+import { EVENTS, trackEvent } from "@/lib/analytics";
 
 type Ctx = { open: (type?: InquiryType) => void };
 const InquiryContext = createContext<Ctx>({ open: () => {} });
@@ -16,6 +17,7 @@ export function InquiryProvider({ children }: { children: React.ReactNode }) {
   const open = useCallback((t?: InquiryType) => {
     opener.current = document.activeElement as HTMLElement | null;
     if (t) setType(t);
+    trackEvent(EVENTS.inquiryOpen, { type: t ?? "Allgemein" });
     setStatus({});
     const d = dlg.current;
     if (!d) return;
@@ -62,6 +64,7 @@ export function InquiryProvider({ children }: { children: React.ReactNode }) {
       }
       const dt = date ? " für den " + new Date(date + "T12:00:00").toLocaleDateString("de-AT", { day: "numeric", month: "long", year: "numeric" }) : "";
       f.reset();
+      trackEvent(EVENTS.inquirySent, { type });
       setStatus({ ok: `Danke, ${name}! Eure Anfrage (${type}${dt}) ist bei uns angekommen. Wir melden uns so bald wie möglich per E-Mail.` });
     } catch {
       setStatus({ error: "Keine Verbindung. Bitte prüft euer Internet und versucht es noch einmal." });

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { umamiOrigins } from "./lib/analytics";
 
 // Wie bibis2: eigener Node-Server im Docker-Container (Port 3000).
 // `standalone` packt nur die wirklich benötigten Dateien in .next/standalone.
@@ -7,13 +8,16 @@ const isDev = process.env.NODE_ENV !== "production";
 // script-src erlaubt 'unsafe-inline' hier nur als Rückfall. Die eigentliche Absicherung macht die
 // <meta>-CSP mit SHA-256-Hashes, die scripts/csp-hashes.mjs nach dem Build in jede Seite schreibt.
 // Beide Richtlinien gelten gleichzeitig: ein Inline-Skript läuft nur, wenn sein Hash in der Seite steht.
+// Selbst gehostetes Umami: Skript von SCRIPT_URL, Events an HOST_URL (beides nur, wenn gesetzt).
+const umami = umamiOrigins().map((o) => ` ${o}`).join("");
+
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}${umami}`,
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self'",
   "img-src 'self' data:",
-  `connect-src 'self'${isDev ? " ws:" : ""}`,
+  `connect-src 'self'${umami}${isDev ? " ws:" : ""}`,
   "manifest-src 'self'",
   "worker-src 'self'",
   "object-src 'none'",

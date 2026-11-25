@@ -50,6 +50,18 @@ Das Formular „Anfrage senden“ schickt die Angaben über `/api/anfrage` per S
 
 Die Antwort-Adresse der Mail ist die E-Mail der anfragenden Person, ein Klick auf „Antworten“ genügt. Schutz: Honeypot-Feld, max. 5 Anfragen pro IP in 10 Minuten, Längenbegrenzung, nur Anfragen von der eigenen Seite. Fehlen die Zugangsdaten, zeigt das Formular einen Hinweis statt still zu scheitern.
 
+### Reichweitenmessung mit Umami (selbst gehostet)
+
+Wie bei fm-app: In Umami eine Website für `bibis-playcafe.at` anlegen und in Coolify als **Build-Argumente** (die Werte werden beim Build eingebettet, nach Änderung neu deployen) eintragen:
+
+| Variable | Wert |
+| --- | --- |
+| `NEXT_PUBLIC_UMAMI_SCRIPT_URL` | z. B. `https://analytics.example.com/script.js` |
+| `NEXT_PUBLIC_UMAMI_HOST_URL` | optional, z. B. `https://analytics.example.com` |
+| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Website-ID aus Umami |
+
+Ohne Script-URL oder Website-ID wird nichts geladen. Die Origins landen automatisch in der CSP (Header und Meta-CSP). Messung cookielos, mit Do Not Track, nur UTM-Parameter bleiben in der URL. Events (erscheinen in Umami beim ersten Senden): `cta_click` (`target`, `placement`), `inquiry_open` und `inquiry_sent` (`type`). Weitere Klicks lassen sich per `data-analytics-event="…"` und `data-analytics-<feld>="…"` im Markup erfassen, Code-Events über `trackEvent()` aus `lib/analytics.ts`.
+
 Lokal testen:
 
 ```bash
