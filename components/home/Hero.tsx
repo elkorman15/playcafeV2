@@ -9,6 +9,7 @@ const WORDS = [
 ];
 
 const CHIPS = [
+  { t: "Mo–Sa 9–19 Uhr", c: "var(--peach)" },
   { t: "0–5 Jahre", c: "var(--terra)" },
   { t: "Montessori-orientiert", c: "var(--blue)" },
   { t: "Ruhig statt laut", c: "var(--sage)" },

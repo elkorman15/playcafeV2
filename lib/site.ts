@@ -21,7 +21,7 @@ export const NAV = [
   { id: "kurse", label: "Kurse" },
   { id: "arbeiten", label: "Arbeiten" },
   { id: "feiern", label: "Feiern" },
-  { id: "besuch", label: "Besuch" },
+  { id: "besuch", label: "Öffnungszeiten" },
 ] as const;
 
 export const INQUIRY_TYPES = ["Feier / Raummiete", "Kursanmeldung", "Allgemeine Frage"] as const;
