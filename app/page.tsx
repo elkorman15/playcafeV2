@@ -45,6 +45,7 @@ const jsonLd = [
     address: { "@type": "PostalAddress", streetAddress: "Handelskai 94–96, Millennium City, Bauteil 2, Top 02-04.0", postalCode: "1200", addressLocality: "Wien", addressRegion: "Wien", addressCountry: "AT" },
     geo: { "@type": "GeoCoordinates", latitude: 48.2412, longitude: 16.3847 },
     hasMap: SITE.mapsUrl,
+    openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "19:00" },
     amenityFeature: ["Spielbereich 0–5 Jahre", "Gratis WLAN", "Arbeitsplätze", "Stillfreundlich", "Hochstühle", "Raumvermietung für Feiern und Workshops"]
       .map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
     sameAs: [SITE.instagram],

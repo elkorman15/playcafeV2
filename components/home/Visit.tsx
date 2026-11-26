@@ -13,8 +13,8 @@ const AMENITIES = [
 ];
 
 const HOURS = [
-  { th: "Montag – Samstag", td: "Uhrzeiten folgen" },
-  { th: "Sonntag", td: "Mietbar für Geburtstage & Feiern" },
+  { th: "Montag – Samstag", td: "9:00–19:00 Uhr" },
+  { th: "Sonntag", td: "Geschlossen, mietbar für Feiern" },
 ];
 
 export function Visit() {
@@ -71,7 +71,7 @@ export function Visit() {
               </tbody>
             </table>
             <p id="hn" style={{ color: "var(--muted)", fontSize: ".92rem", marginTop: ".9rem", fontWeight: 600 }}>
-              Die genauen Uhrzeiten geben wir vor der Eröffnung bekannt.
+              Den Raum könnt ihr auch unter der Woche für Feiern, Kurse und Workshops mieten.
             </p>
             <h3 style={{ marginTop: "1.8rem" }}>Kontakt</h3>
             <p className="contact" style={{ fontWeight: 600 }}>

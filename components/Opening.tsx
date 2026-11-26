@@ -27,7 +27,7 @@ export function OpeningStatus() {
   return (
     <span className="status">
       <i aria-hidden="true" />
-      <span>{d === 0 ? "Wir haben geöffnet: Montag bis Samstag" : "Wir eröffnen im März 2027"}</span>
+      <span>{d === 0 ? "Wir haben geöffnet: Mo–Sa, 9–19 Uhr" : "Wir eröffnen im März 2027"}</span>
     </span>
   );
 }

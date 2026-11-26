@@ -295,8 +295,9 @@ html,body{overflow-x:clip}
 .faq details{background:var(--cream);border-radius:var(--r-lg);padding:0 1.4rem}
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.15rem 0;font-family:var(--display);font-weight:600;font-size:1.2rem}
 .faq summary::-webkit-details-marker{display:none}
-.faq .pm{flex:none;width:38px;height:38px;border-radius:50%;background:var(--butter);display:grid;place-items:center;transition:transform .3s cubic-bezier(.3,1.6,.5,1),background .3s}
-.faq .pm::before{content:"+";font:600 1.5rem/1 var(--display)}
+.faq .pm{flex:none;position:relative;width:38px;height:38px;border-radius:50%;background:var(--butter);transition:transform .3s cubic-bezier(.3,1.6,.5,1),background .3s}
+.faq .pm::before,.faq .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2.5px;margin:-1.25px 0 0 -7px;border-radius:2px;background:currentColor}
+.faq .pm::after{transform:rotate(90deg)}
 .faq details[open] .pm{transform:rotate(45deg);background:var(--blush)}
 .faq details p{padding:0 0 1.3rem;color:var(--muted);max-width:65ch}
 
